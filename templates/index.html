@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beeshield</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="Beeshield, Invisible night, Minecraft, Server, Eternal Fog, Бишилд, Незримая ночь, Майнкрафт, Сервер, Вечный туман">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content=" ">
+</head>
+<body>
+    <main>
+        <section id="main">
+            <img id="beeshield" src="{{ url_for('static', filename= 'img/bslogo.gif') }}" onclick="return false;" onmousedown="return false;" alt="Beeshield. Invisible night">
+            <h1>Beeshield. Незримая ночь</h1>
+            <div id="buttons">
+                <button id="download" onclick="openPopup()"><span class="text-download">Скачать и играть</span></button>
+                <button id="anketa"><span class="anketa-download">Подать анкету</span></button>
+            </div>
+        </section>
+
+        <section id="about">
+            <div id="text">
+                <h2>О нас</h2>
+                <p>Мы команда энтузиастов. Нацеленная на создание полноценного фанатского проекта по Beeshield - Season of the mist. Вечный туман охватил весь мир, но вот не задача теперь это не прежний туман. Что-то здесь изменилось: "Вечная ночь уже тут?". "Скоро вы много о чём узнаете" - сказал он, и ушёл посмотрев на вас загадочным взглядом... Начало было положено человеком с псевдонимом "Star_plays", а список тех кто ещё помогал нам можно посмотреть <a href="">здесь</a></p>
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TfKwAlhk01k?si=nzVRER_ZEaX25Sum" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
+	
+    <footer>
+        <div class="footer-social">
+            <h1>Мы в соцсетях</h1>
+            <div class="social-links">
+                <a href="https://t.me/BeeNight" target="_blank" rel="noopener noreferrer" class="telegram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                    </svg>
+                    Telegram
+                </a>
+                <a href="https://www.youtube.com/@Bee-Night" class="Youtube-ssl">YouTube</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Всплывающее окно -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup-content" id="popupContent">
+        <h3>Загрузка начнёться после запуска сезона<h3>
+        </ul>
+        <button class="close-btn" onclick="closePopup()">Закрыть</button>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById("popupOverlay").style.display = "block";
+            document.getElementById("popupContent").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popupOverlay").style.display = "none";
+            document.getElementById("popupContent").style.display = "none";
+        }
+
+        // Закрытие при клике на оверлей
+        document.getElementById("popupOverlay").addEventListener("click", closePopup);
+    </script>
+</body>
+</html>
